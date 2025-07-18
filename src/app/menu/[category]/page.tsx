@@ -1,20 +1,21 @@
 import { pizzas } from "@/data";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import { FC } from "react";
 
-type Props = {
+// Typing optional if you don't need extra checks
+interface PageProps {
   params: {
     category: string;
   };
-};
+}
 
 export async function generateStaticParams() {
-  const categories = ["pizza", "burger", "salad"]; 
+  const categories = ["pizza", "burger", "salad"];
   return categories.map((category) => ({ category }));
 }
 
-const CategoryPage = async ({ params }: Props) => {
+const CategoryPage: FC<PageProps> = ({ params }) => {
   const { category } = params;
   const filteredItems = pizzas.filter((p) => p.category === category);
 
