@@ -9,13 +9,12 @@ type Props = {
   };
 };
 
-// 🔧 Statik eksport uchun kerakli funksiya
 export async function generateStaticParams() {
-  const categories = ["pizza", "burger", "salad"]; // Bu ro'yxatni loyihangizga qarab moslang
+  const categories = ["pizza", "burger", "salad"]; 
   return categories.map((category) => ({ category }));
 }
 
-const CategoryPage = ({ params }: Props) => {
+const CategoryPage = async ({ params }: Props) => {
   const { category } = params;
   const filteredItems = pizzas.filter((p) => p.category === category);
 
