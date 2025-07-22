@@ -7,16 +7,14 @@ import { redirect } from "next/navigation";
 
  
 
-const Page: PageType = async ({params}) =>  { 
+const Page: PageType<{ category: string }> = async ({ params }) => {
   const { category } = params;
 
-  if (!category){
+  if (!category) {
     redirect("/");
   }
 
-  const filteredItems = pizzas.filter(
-    (item) => item.category ===  category
-  );
+  const filteredItems = pizzas.filter((item) => item.category === category);
 
   return (
     <div className="flex flex-wrap text-red-500">
@@ -48,7 +46,7 @@ const Page: PageType = async ({params}) =>  {
       ))}
     </div>
   );
-}
+};
 
  export function generateStaticParams() {
   const categories = ["pizza", "burger", "salad"];
