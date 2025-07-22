@@ -2,22 +2,25 @@
 
 import Image from 'next/image';
 import React, { useEffect, useState } from 'react'
+import slide1Image from "@/../public/slide1.png";
+import slide2Image from "@/../public/slide2.png";
+import slide3Image from "@/../public/slide3.jpg";
 
 const data = [
   {
     id: 1,
     title: "always fresh & always crispy & always hot",
-    image: "/slide1.png",
+    image: slide1Image
   },
   {
     id: 2,
     title: "we deliver your order wherever you are in NY",
-    image: "/slide2.png",
+    image: slide2Image
   },
   {
     id: 3,
     title: "the best pizza to share with your family",
-    image: "/slide3.jpg",
+    image: slide3Image
   },
 ];
 
@@ -52,7 +55,7 @@ const Slider = () => {
           className="object-cover"
         ></Image>
       </div>
-    </div>
+    </div>  
   );
 }
 

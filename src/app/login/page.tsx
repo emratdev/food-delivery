@@ -1,6 +1,9 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react'
+import loginBgImage from "@/../public/loginBg.png";
+import googleImage from "@/../public/google.png";
+import facebookImage from "@/../public/facebook.png";
 
 const LoginPage = () => {
   return (
@@ -9,7 +12,7 @@ const LoginPage = () => {
       <div className='h-full shadow-2xl rounded-md flex flex-col md:flex-row md:h-[70%] md:w-full lg:w-[60%] 2xl:w-1/2'>
         {/* IMAGE CONTAINER */}
         <div className="relative h-1/3 w-full md:h-full md:w-1/2 ">
-          <Image src="/loginBg.png" alt="" fill className='object-cover'/>
+          <Image src={loginBgImage} alt="" fill className='object-cover'/>
         </div>
 
         {/* FORM CONTAINER */}
@@ -19,7 +22,7 @@ const LoginPage = () => {
           <p>Log into your account or create a new one using social buttons</p>
           <button className="flex gap-4 p-4 ring-1 ring-orange-100 rounded-md">
             <Image
-              src="/google.png"
+              src={googleImage}
               alt=""
               width={20}
               height={20}
@@ -30,7 +33,7 @@ const LoginPage = () => {
 
           <button className="flex gap-4 p-4 ring-1 ring-blue-100 rounded-md">
             <Image
-              src="/facebook.png"
+              src={facebookImage}
               alt=""
               width={20}
               height={20}

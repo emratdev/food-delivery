@@ -1,6 +1,7 @@
  import Image from 'next/image';
 import React from 'react'
 import { Countdown } from './Countdown';
+import offerImage from "@/../public/offerProduct.png";
  
 export const Offer = () => {
   return (
@@ -15,7 +16,7 @@ export const Offer = () => {
       </div>
       {/* IMAGE  CONTAINER */}
       <div className='relative flex-1 w-full md:h-full'>
-        <Image src="/offerProduct.png" alt='offer' fill className='object-contain' />
+        <Image src={offerImage} alt='offer' fill className='object-contain' />
       </div>
     </div>
   );

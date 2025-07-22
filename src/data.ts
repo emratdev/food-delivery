@@ -1,8 +1,26 @@
+import { StaticImageData } from "next/image";
+import p1Image from "@public/temporary/p1.png";
+import p2Image from "@public/temporary/p2.png";
+import p3Image from "@public/temporary/p3.png";
+import p4Image from "@public/temporary/p4.png";
+import p5Image from "@public/temporary/p5.png";
+import p6Image from "@public/temporary/p6.png";
+import p7Image from "@public/temporary/p7.png";
+import p8Image from "@public/temporary/p8.png";
+import p9Image from "@public/temporary/p9.png";
+import p10Image from "@public/temporary/p10.png";
+import p11Image from "@public/temporary/p11.png";
+import p12Image from "@public/temporary/p12.png";
+import m1Image from "@public/temporary/m1.png";
+import m2Image from "@public/temporary/m2.png";
+import m3Image from "@public/temporary/m3.png";
+
+
 type Product = {
   id: number;
   title: string;
   desc?: string;
-  img?: string;
+  img?: string | StaticImageData;
   price: number;
   category: string;
   options?: { title: string; additionalPrice: number }[];
@@ -15,7 +33,7 @@ export const featuredProducts: Products = [
     id: 1,
     title: "Sicilian",
     desc: "Ignite your taste buds with a fiery combination of spicy pepperoni, jalapeños, crushed red pepper flakes, and melted mozzarella cheese, delivering a kick with every bite.",
-    img: "/temporary/p1.png",
+    img: p1Image,
     price: 24.9,
     category: "string",
     options: [
@@ -38,7 +56,7 @@ export const featuredProducts: Products = [
     title: "Bacon Deluxe",
     category: "pizzas",
     desc: "Indulge in smoky goodness with a flame-grilled beef patty, topped with crispy bacon, melted cheddar cheese, caramelized onions, and a smattering of tangy BBQ sauce.",
-    img: "/temporary/p2.png",
+    img: p2Image,
     price: 29.9,
     options: [
       {
@@ -60,7 +78,7 @@ export const featuredProducts: Products = [
     title: "Bella Napoli",
     category: "pizzas",
     desc: "A classic Italian delight featuring a thin, crispy crust, tangy tomato sauce, fresh mozzarella, and a medley of aromatic herbs topped with lettuce, tomatoes, and a dollop of tangy mayo.",
-    img: "/temporary/p3.png",
+    img: p3Image,
     price: 24.9,
     options: [
       {
@@ -82,7 +100,7 @@ export const featuredProducts: Products = [
     title: "Spicy Arrabbiata",
     category: "pizzas",
     desc: "Ignite your taste buds with this fiery pasta creation, combining penne in a spicy tomato sauce infused with garlic, red chili flakes, and fresh basil for the ultimate comfort food experience.",
-    img: "/temporary/p4.png",
+    img: p4Image,
     price: 26.9,
     options: [
       {
@@ -104,7 +122,7 @@ export const featuredProducts: Products = [
     title: "Jalapeño Fiesta",
     category: "pizzas",
     desc: "Ignite your taste buds with a fiery kick! This burger features a succulent beef patty, fiery jalapeños, pepper jack cheese, and a zesty chipotle mayo sauce , and all the classic fixings on a toasted bun.",
-    img: "/temporary/p5.png",
+    img: p5Image,
     price: 29.9,
     options: [
       {
@@ -126,7 +144,7 @@ export const featuredProducts: Products = [
     title: "Margherita Magic",
     category: "pizzas",
     desc: "A timeless favorite with a twist, showcasing a thin crust topped with sweet tomatoes, fresh basil, creamy mozzarella, and a drizzle of extra virgin olive oil, fresh arugula, and a drizzle of balsamic glaze.",
-    img: "/temporary/p6.png",
+    img: p6Image,
     price: 24.9,
     options: [
       {
@@ -148,7 +166,7 @@ export const featuredProducts: Products = [
     title: "Garlic Parmesan Linguine",
     category: "pizzas",
     desc: "A garlic lover's delight, featuring linguine smothered in a creamy Parmesan sauce, infused with garlic and garnished with chopped parsley, bell peppers, and cherry tomatoes.",
-    img: "/temporary/p7.png",
+    img: p7Image,
     price: 28.9,
     options: [
       {
@@ -170,7 +188,7 @@ export const featuredProducts: Products = [
     title: "Mediterranean Delight",
     category: "pizzas",
     desc: "Embark on a culinary journey with this Mediterranean-inspired creation, featuring zesty feta cheese, Kalamata olives, sun-dried tomatoes, and a sprinkle of oregano.",
-    img: "/temporary/p8.png",
+    img: p8Image,
     price: 32.9,
     options: [
       {
@@ -192,7 +210,7 @@ export const featuredProducts: Products = [
     title: "Hawaiian Teriyaki",
     category: "pizzas",
     desc: "Experience a taste of the tropics with a juicy beef patty glazed in tangy teriyaki sauce, topped with grilled pineapple, crispy bacon, and fresh lettuce, and all the classic fixings on a toasted bun.",
-    img: "/temporary/p9.png",
+    img: p9Image,
     price: 29.9,
     options: [
       {
@@ -220,7 +238,7 @@ export const pizzas: Products = [
     title: "Sicilian",
     category: "pizzas",
     desc: "Ignite your taste buds with a fiery combination of spicy pepperoni, jalapeños, crushed red pepper flakes, and melted mozzarella cheese, delivering a kick with every bite.",
-    img: "/temporary/p1.png",
+    img: p1Image,
     price: 24.9,
     options: [
       {
@@ -242,7 +260,7 @@ export const pizzas: Products = [
     title: "Mediterranean Delight",
     category: "pizzas",
     desc: "Embark on a culinary journey with this Mediterranean-inspired creation, featuring zesty feta cheese, Kalamata olives, sun-dried tomatoes, and a sprinkle of oregano.",
-    img: "/temporary/p8.png",
+    img: p8Image,
     price: 32.9,
     options: [
       {
@@ -264,7 +282,7 @@ export const pizzas: Products = [
     title: "Bella Napoli",
     category: "pizzas",
     desc: "A classic Italian delight featuring a thin, crispy crust, tangy tomato sauce, fresh mozzarella, and a medley of aromatic herbs topped with lettuce, tomatoes, and a dollop of tangy mayo.",
-    img: "/temporary/p3.png",
+    img: p3Image,
     price: 26.9,
     options: [
       {
@@ -286,7 +304,7 @@ export const pizzas: Products = [
     title: "Pesto Primavera",
     category: "pizzas",
     desc: "A classic Italian delight featuring a thin, crispy crust, tangy tomato sauce, fresh mozzarella, and a medley of aromatic herbs topped with lettuce, tomatoes, and a dollop of tangy mayo.",
-    img: "/temporary/p10.png",
+    img: p10Image,
     price: 28.9,
     options: [
       {
@@ -308,7 +326,7 @@ export const pizzas: Products = [
     title: "Veggie Supreme",
     category: "pizzas",
     desc: "A classic Italian delight featuring a thin, crispy crust, tangy tomato sauce, fresh mozzarella, and a medley of aromatic herbs topped with lettuce, tomatoes, and a dollop of tangy mayo.",
-    img: "/temporary/p11.png",
+    img: p11Image,
     price: 24.9,
     options: [
       {
@@ -330,7 +348,7 @@ export const pizzas: Products = [
     title: "Four Cheese Fantasy",
     category: "pizzas",
     desc: "Experience pure cheesy bliss with a melty blend of mozzarella, cheddar, provolone, and Parmesan cheeses, creating a rich and indulgent pizza experience.",
-    img: "/temporary/p12.png",
+    img: p12Image,
     price: 22.9,
     options: [
       {
@@ -353,7 +371,7 @@ export const singleProduct: Product = {
   id: 1,
   title: "Sicilian",
   desc: "Ignite your taste buds with a fiery combination of spicy pepperoni, jalapeños, crushed red pepper flakes, and melted mozzarella cheese, delivering a kick with every bite.",
-  img: "/temporary/p1.png",
+  img: p1Image,
   category: "pizzas",
   price: 24.9,
   options: [
@@ -378,7 +396,7 @@ type Menu = {
   slug: string;
   title: string;
   desc?: string;
-  img?: string;
+  img?: string | StaticImageData;
   color: string;
 }[];
 
@@ -388,7 +406,7 @@ export const menu: Menu = [
     slug: "pastas",
     title: "Italian Pastas",
     desc: "Savor the taste of perfection with our exquisite Italian handmade pasta menu.",
-    img: "/temporary/m1.png",
+    img: m1Image,
     color: "white",
   },
   {
@@ -396,7 +414,7 @@ export const menu: Menu = [
     slug: "burgers",
     title: "Juicy Burgers",
     desc: "Burger Bliss: Juicy patties, bold flavors, and gourmet toppings galore.",
-    img: "/temporary/m2.png",
+    img: m2Image,
     color: "black",
   },
   {
@@ -404,7 +422,7 @@ export const menu: Menu = [
     slug: "pizzas",
     title: "Cheesy Pizzas",
     desc: "Pizza Paradise: Irresistible slices, mouthwatering toppings, and cheesy perfection.",
-    img: "/temporary/m3.png",
+    img: m3Image,
     color: "white",
   },
 ];

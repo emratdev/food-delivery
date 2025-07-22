@@ -1,17 +1,21 @@
 import { pizzas } from "@/data";
+import { PageType } from "@/Types/type";
 import Image from "next/image";
 import Link from "next/link";
+import { redirect } from "next/navigation";
 
 
-type Props = {
-  params: {
-    category: string;
-  };
-};
+ 
 
-export default function CategoryPage({ params }: Props) {
+const Page: PageType = async ({params}) =>  { 
+  const { category } = await params;
+
+  if (!category){
+    redirect("/");
+  }
+
   const filteredItems = pizzas.filter(
-    (item) => item.category === params.category
+    (item) => item.category ===  category
   );
 
   return (
@@ -46,9 +50,12 @@ export default function CategoryPage({ params }: Props) {
   );
 }
 
-export function generateStaticParams() {
+ export function generateStaticParams() {
   const categories = ["pizza", "burger", "salad"];
   return categories.map((category) => ({
     category,
   }));
 }
+
+
+export default Page;
