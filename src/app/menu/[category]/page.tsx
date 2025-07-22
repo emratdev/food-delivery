@@ -8,7 +8,7 @@ import { redirect } from "next/navigation";
  
 
 const Page: PageType = async ({params}) =>  { 
-  const { category } = await params;
+  const { category } = params;
 
   if (!category){
     redirect("/");
