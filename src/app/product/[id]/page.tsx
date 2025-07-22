@@ -1,32 +1,17 @@
-// app/product/[id]/page.tsx
-
 import { Price } from '@/components/Price';
-import { pizzas } from '@/data';
+import { singleProduct } from '@/data';
 import Image from 'next/image';
-import { notFound } from 'next/navigation';
-import React from 'react';
+import React from 'react'
 
-export async function generateStaticParams() {
-  return pizzas.map((item) => ({
-    id: item.id.toString(),
-  }));
-}
-
-const SingleProduct = ({ params }: { params: { id: string } }) => {
-  const product = pizzas.find(p => p.id.toString() === params.id);
-
-  if (!product) {
-    notFound();
-  }
-
+const SingleProducts = () => {
   return (
     <div className="p-4 lg:px-20 xl:px-40 h-screen flex flex-col justify-around text-red-500 md:flex-row md:gap-8 md:items-center ">
       {/* IMAGE CONTAINER */}
-      {product.img && (
+      {singleProduct.img && (
         <div className="relative w-full h-1/2 md:h-[70%] ">
           <Image
-            src={product.img}
-            alt={product.title}
+            src={singleProduct.img}
+            alt=""
             className="object-contain"
             fill
           />
@@ -34,16 +19,16 @@ const SingleProduct = ({ params }: { params: { id: string } }) => {
       )}
       {/* TEXT CONTAINER */}
       <div className="h-1/2 flex flex-col gap-4 md:h-[70%] md:justify-center md:gap-6 xl:gap-8 ">
-        <h1 className="text-3xl font-bold uppercase xl:text-4xl">{product.title}</h1>
-        <p>{product.desc}</p>
+        <h1 className="text-3xl font-bold uppercase xl:text-4xl">{singleProduct.title}</h1>
+        <p>{singleProduct.desc}</p>
         <Price
-          price={product.price}
-          id={product.id}
-          options={product.options}
+          price={singleProduct.price}
+          id={singleProduct.id}
+          options={singleProduct.options}
         />
       </div>
     </div>
   );
-};
+}
 
-export default SingleProduct;
+export default SingleProducts
