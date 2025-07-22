@@ -1,13 +1,13 @@
 import { pizzas } from "@/data";
-import { PageType } from "@/Types/type";
 import Image from "next/image";
 import Link from "next/link";
 import { redirect } from "next/navigation";
 
+type Props = {
+  params: { category: string };
+};
 
- 
-
-const Page: PageType<{ category: string }> = async ({ params }) => {
+const Page = async ({ params }: Props) => {
   const { category } = params;
 
   if (!category) {
@@ -48,12 +48,9 @@ const Page: PageType<{ category: string }> = async ({ params }) => {
   );
 };
 
- export function generateStaticParams() {
-  const categories = ["pizza", "burger", "salad"];
-  return categories.map((category) => ({
-    category,
-  }));
+export function generateStaticParams() {
+  const categories = ["pizzas", "burgers", "pastas"];
+  return categories.map((category) => ({ category }));
 }
-
 
 export default Page;
