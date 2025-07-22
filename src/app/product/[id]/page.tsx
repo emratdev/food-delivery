@@ -1,10 +1,10 @@
 // app/product/[id]/page.tsx
 
-import { Price } from "@/components/Price";
-import { pizzas } from "@/data";
-import Image from "next/image";
-import { notFound } from "next/navigation";
-import React from "react";
+import { Price } from '@/components/Price';
+import { pizzas } from '@/data';
+import Image from 'next/image';
+import { notFound } from 'next/navigation';
+import React from 'react';
 
 export async function generateStaticParams() {
   return pizzas.map((item) => ({
@@ -13,7 +13,7 @@ export async function generateStaticParams() {
 }
 
 const SingleProduct = ({ params }: { params: { id: string } }) => {
-  const product = pizzas.find((p) => p.id.toString() === params.id);
+  const product = pizzas.find(p => p.id.toString() === params.id);
 
   if (!product) {
     notFound();
@@ -34,9 +34,7 @@ const SingleProduct = ({ params }: { params: { id: string } }) => {
       )}
       {/* TEXT CONTAINER */}
       <div className="h-1/2 flex flex-col gap-4 md:h-[70%] md:justify-center md:gap-6 xl:gap-8 ">
-        <h1 className="text-3xl font-bold uppercase xl:text-4xl">
-          {product.title}
-        </h1>
+        <h1 className="text-3xl font-bold uppercase xl:text-4xl">{product.title}</h1>
         <p>{product.desc}</p>
         <Price
           price={product.price}
