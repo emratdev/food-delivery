@@ -1,8 +1,6 @@
 import type { FC, ReactNode } from "react";
 
-
 type SearchParams = { [key: string]: string | string[] | undefined };
-
 
 export type LayoutType = FC<{
   children: ReactNode;
