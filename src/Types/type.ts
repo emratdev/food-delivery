@@ -1,5 +1,4 @@
-import type { JSX, FC, ReactNode } from "react";
-
+import type { FC, ReactNode } from "react";
 
 type SearchParams = { [key: string]: string | string[] | undefined };
 
@@ -11,8 +10,7 @@ export interface ParamsWithLocale {
   [key: string]: string;
 }
 
-export type PageType<Params extends ParamsWithLocale = ParamsWithLocale> =
-  (props: {
-    params: Params;
-    searchParams?: SearchParams;
-  }) => Promise<JSX.Element>;
+export type PageType<Params extends ParamsWithLocale = ParamsWithLocale> = FC<{
+  params: Promise<Params>;
+  searchParams?: Promise<SearchParams>;
+}>;
