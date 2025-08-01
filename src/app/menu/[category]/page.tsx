@@ -1,13 +1,12 @@
 import { pizzas } from "@/data";
+import { PageType } from "@/Types/type";
 import Image from "next/image";
 import Link from "next/link";
 import { redirect } from "next/navigation";
 
-type Props = {
-  params: { category: string };
-};
 
-const Page = async ({ params }: Props) => {
+
+const Page: PageType<{ category: string }> = ({ params }) => {
   const { category } = params;
 
   if (!category) {

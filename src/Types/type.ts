@@ -11,6 +11,6 @@ export interface ParamsWithLocale {
 }
 
 export type PageType<Params extends ParamsWithLocale = ParamsWithLocale> = FC<{
-  params: Promise<Params>;
-  searchParams?: Promise<SearchParams>;
+  params: Params;
+  searchParams?: SearchParams;
 }>;
