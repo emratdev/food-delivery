@@ -1,7 +1,8 @@
 import { Price } from "@/components/Price";
 import { pizzas } from "@/data";
+import { PageType } from "@/Types/type";
 import Image from "next/image";
-import { notFound } from "next/navigation";
+import { redirect } from "next/navigation";
 
 export async function generateStaticParams() {
   return pizzas.map((product) => ({
@@ -9,11 +10,15 @@ export async function generateStaticParams() {
   }));
 }
 
-const ProductPage = ({ params }: { params: { id: string } }) => {
-  const product = pizzas.find((p) => p.id.toString() === params.id);
+const ProductPage: PageType = async ({params }) => {
+  const {id} = await params;
+  if (!id) {
+    redirect("/")
+  }
+  const product = pizzas.find((p) => p.id === Number(id));
 
   if (!product) {
-    notFound();
+    return <p>not found</p>;
   }
 
   return (

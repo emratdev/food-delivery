@@ -14,3 +14,4 @@ export type PageType<Params extends ParamsWithLocale = ParamsWithLocale> = FC<{
   params: Promise<Params>;
   searchParams?: Promise<SearchParams>;
 }>;
+ 
