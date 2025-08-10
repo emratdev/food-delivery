@@ -1,4 +1,5 @@
 import { menu } from "@/data";
+import Image from "next/image";
 import Link from "next/link";
 
 const MenuPage = () => {
@@ -8,18 +9,23 @@ const MenuPage = () => {
         <Link
           href={`/menu/${category.slug}`}
           key={category.id}
-          style={{ backgroundImage: `url(${category.img})` }}
-          className="w-full h-1/3 bg-cover p-8 md:h-1/2 "
+          className="relative w-full h-1/3 md:h-1/2 p-8 flex items-center"
         >
+          <Image
+            src={category.img!} 
+            alt={category.title}
+            fill
+            className="object-cover"
+          />
           <div
-            className={`w-1/2 ${
+            className={`relative z-10 w-1/2 ${
               category.color === "white" ? "text-white" : "text-black"
             }`}
           >
             <h1 className="uppercase font-bold text-3xl">{category.title}</h1>
             <p className="text-sm py-6">{category.desc}</p>
             <button
-              className={`hidden 2xl:block py-2 px-4 rounded-md ${
+              className={`py-2 px-4 rounded-md ${
                 category.color === "white"
                   ? "bg-white text-red-500"
                   : "bg-black text-white"

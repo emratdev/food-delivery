@@ -1,8 +1,12 @@
-import { featuredProducts } from '@/data';
-import Image from 'next/image';
-import React from 'react'
+"use client";
 
-const Featured = () => {
+import { featuredProducts } from "@/data";
+import Image from "next/image";
+import React from "react";
+import { useCart } from "react-use-cart";
+
+export const Featured = () => {
+  const { addItem } = useCart();
   return (
     <div className="w-screen overflow-x-scroll text-red-500   ">
       {/* Wrapper */}
@@ -30,13 +34,16 @@ const Featured = () => {
             {/* TEXT CONTAINER */}
             <div className="flex-1 flex flex-col gap-4 text-center justify-center items-center">
               <h1 className="text-xl font-bold uppercase xl:text-2xl 2xl:text-3xl ">
-                {item.title}
+                {item.name}
               </h1>
               <p className="p-4 2xl:p-8">{item.desc}</p>
               <span className="text-xl font-bold">
                 ${item.price.toFixed(2)}
               </span>
-              <button className="bg-red-500 text-white p-2 rounded-md">
+              <button type="button" onClick={()=> addItem({
+                ...item,
+                id: `${item.id}`
+              })} className="bg-red-500 text-white p-2 rounded-md">
                 Add to Cart
               </button>
             </div>
@@ -45,6 +52,5 @@ const Featured = () => {
       </div>
     </div>
   );
-}
+};
 
-export default Featured
